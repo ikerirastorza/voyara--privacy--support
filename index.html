@@ -1,203 +1,348 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Voyara · Privacidad y Soporte</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voyara: Travel Map — Support & Privacy</title>
+  <meta name="description" content="Official support and privacy page for Voyara: Travel Map." />
   <style>
     :root {
-      --bg: #f6f3ee;
+      --bg: #f5f7fb;
       --card: #ffffff;
-      --text: #171717;
-      --muted: #5f5f5f;
-      --line: #e8e2d9;
-      --accent: #7c4dff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #e6eaf0;
+      --radius: 18px;
+      --max: 980px;
     }
-
-    * { box-sizing: border-box; }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, #efe7ff 0%, transparent 28%),
-        radial-gradient(circle at bottom right, #ffe8d6 0%, transparent 24%),
-        var(--bg);
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
-
-    .wrap {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 48px 20px 72px;
-    }
-
-    .hero {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 32px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: 2.4rem;
-      line-height: 1.05;
-    }
-
-    .lead {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .badge {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(124, 77, 255, 0.1);
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .grid {
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .nav, .hero, .section, .footer { padding: 24px 0; }
+    .nav-row, .footer-row, .grid-2, .grid-3 {
       display: grid;
-      gap: 20px;
+      gap: 18px;
     }
-
+    .nav-row {
+      grid-template-columns: auto 1fr auto auto;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+    }
+    .brand, .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+    }
+    .brand img, .footer-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: white;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+    .brand small, .footer-logo small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav-links a, .footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .nav-links a:hover, .footer a:hover { color: var(--text); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--text);
+    }
+    .lang-switch {
+      display: inline-flex;
+      gap: 6px;
+      background: white;
+      border: 1px solid var(--line);
+      padding: 4px;
+      border-radius: 999px;
+    }
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .lang-switch button.active {
+      background: var(--text);
+      color: white;
+    }
+    .hero {
+      padding-top: 40px;
+      padding-bottom: 20px;
+    }
+    .hero-card {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(245,158,11,0.06));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.03rem;
+      max-width: 720px;
+      margin-bottom: 18px;
+    }
+    .hero-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .section h2 {
+      font-size: clamp(1.45rem, 4vw, 2.3rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+    .section-intro {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border-radius: var(--radius);
+      padding: 22px;
     }
-
-    h2 {
-      margin: 0 0 14px;
-      font-size: 1.25rem;
+    .card h3, .policy-section h3 {
+      font-size: 1.06rem;
+      margin-bottom: 8px;
     }
-
-    p, li {
+    .card p, .card li, .policy-section p, .policy-section li {
       color: var(--muted);
     }
-
-    ul {
+    .card ul, .policy-section ul {
       padding-left: 18px;
-      margin: 12px 0 0;
+      margin-top: 8px;
     }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
+    .policy {
+      display: grid;
+      gap: 14px;
     }
-
-    a:hover { text-decoration: underline; }
-
-    .footer {
-      margin-top: 28px;
+    .policy-section {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .footer-row {
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
       color: var(--muted);
-      font-size: 0.95rem;
-      text-align: center;
+    }
+    [data-lang] { display: none; }
+    html[data-current-lang="es"] [data-lang="es"] { display: inline; }
+    html[data-current-lang="en"] [data-lang="en"] { display: inline; }
+    html[data-current-lang="es"] .block-es,
+    html[data-current-lang="en"] .block-en { display: block; }
+    html[data-current-lang="es"] .block-en,
+    html[data-current-lang="en"] .block-es { display: none; }
+    @media (max-width: 820px) {
+      .nav-row, .grid-2, .grid-3, .footer-row { grid-template-columns: 1fr; }
+      .nav-links { justify-content: flex-start; }
+      .hero-card { padding: 24px; }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <nav class="nav">
+    <div class="wrap nav-row">
+      <a href="#top" class="brand">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABgAGADASIAAhEBAxEB/8QAHAAAAgIDAQEAAAAAAAAAAAAAAQIABgMFBwgE/8QAMhAAAQMDAgQEBAYDAQAAAAAAAQACAwQFEQYhEhMxQQdRYZEVInGBIzJCobHBYqLR8P/EABsBAAICAwEAAAAAAAAAAAAAAAABBAUDBgcC/8QAKxEAAQMDAwIFBAMAAAAAAAAAAAECAwQFESExYRNBElFxkbEUItHwMkKB/9oADAMBAAIRAxEAPwD1GmBSBHK9CHBUS5RSGMohlTKQBUQyogCZUQUymBCghlAlMQAiEgKYFMB1FwjWGp9V6V1fV0EtylnonHnUxe0AmJ3QZA7bj7LcWTWNdcIw5lwmEg/Mx2Mj9t1bOs0yRpKjkVq69/wVstzZE5Wuaunodgyoq1pi+yV0hpqwtM2MseBji8wfVWRVcsToneFxNgnZOzxs2CogqzX3yR872Uz+CJpwHDq71VdXV8VCxHyd9kQlxQulXDSzIFVB15qGDed5Pktnp+pq62SSaeQ8lnyhvmVBpL5HVSpExi5X0/JlkpHxtV7l0N2gVCUpKvSIAFELGCmBTEULxl0/8V0824wMzV24l5wN3RH8w+2x+xXGLdO6GRj4nFrhuCF6lc1sjHMkaHMcC1zT0IPULzRq+zu03qart5zyQ7mQE/qjdu326fZbTYanqRupndtU9O/7yU10g1SRO+5b7Hen8UU7DwzxEO+q7NQVcdbRQ1MJyyVocPT0XmWirTEWuadwuveFl9bUsltr3b45sOf9h/fusV4ocM6rU2+DBa5unIsa7L8lq1Vcfh9scGuxNN8jPTzPt/Ko9NI+TmFu7Im8cnzAENyBtnvul1LcpL3dax9F+JS0LSOIEYABwXfcrWVFXAcQ0mTA08QfIwB5JAzkjtkbBcjusv1E6uX+LdE559zpFFSdOJE/suq8G4dUuqZ2xxcZZngiY45IBOw/ddDt9MKOiihHVo+Y+Z7qk6DojVVr6uQfhU+zfV5/4P6V9KtbDSeFq1L93aJ6fvwVtzkRHpC3tuQpSVCUpK2MqRQU4KxApwUwMgK574zWtsmnZLxFQwVVTRxOjdzA7LYnEZe3BG7Tg77YLl0AFLPFFU08sFQwPhlYWPYejmkYI9lmpp1p5Wyp2PEjEkarVPKNHfbbz6AzWt5iijLahrKpwNQ7s7JB4foFtrTqNlLSuZSwmnrS9xZWCUlzGEEcPD079VUNb2eXSeq6+0y8RZC/ihef1xHdp9tvqCvggrcd10daaGpjymrXJ5rsv+8lA5ro3ZTRU4OjUV4qa8cNa6PnQtbDhjAwcLRtsP5Wxgnc97Y4wXPcQ1oHUk9AufWy5AzsdxfMBwO9R2P9ey654RWw3S9uuErc01FgjPQyHp7bn2XC7nZ5Ka4OpHee/G+fY6xS10ctvSr4252x7nWdP24Wq0U9LtzGtzIR3eev/vRfeSoSlJWxxsSNqMbshpj3q9yuduoCUhKJKQlZDwLlMHJFMJiMnGAoZmjqVgc0lYZKdz+6MIGTmnj1o52p7VBdLS0Pu1A0tMQ6zxHctH+QO4HfJHkvMhlfG9zHhzXNOHNIwQfIr2vUWYT54nuH0Krly8MLHdZjNX0zZZT1eQMn79VslrviUcfRlTLU280IstP1Fyh5ZsLK64XinpLbA+oqJncIjb5eZPYDrkr2Noa0wab05TW9sjZJgOOeQdHyHqfp2HoFqbP4fWqzZ+GxckHrwADP1Vght3JGGud9yq671cNfOk7W4VExnuSoHyRQrBn7VXOOTbc1p7qcQK+NkLm91lDSqzAGUlKUEEAAFMCsSYFMRkRBSAqZQMygo5WIFHKQD5UyseVMowA5IwlylyhlABJSkqEoJiP/2Q==" alt="Voyara logo" />
+        <span>Voyara<small>Travel Map</small></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#support"><span data-lang="es">Soporte</span><span data-lang="en">Support</span></a>
+        <a href="#privacy"><span data-lang="es">Política de privacidad</span><span data-lang="en">Privacy Policy</span></a>
+      </div>
+
+      <div class="lang-switch" aria-label="Language switcher">
+        <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+
+      <a class="btn" href="mailto:ikerirastorzadeveloper@gmail.com"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+    </div>
+  </nav>
+
+  <main id="top">
     <section class="hero">
-      <div class="badge">Voyara</div>
-      <h1>Privacidad y Soporte</h1>
-      <p class="lead">
-        Esta página reúne la información de soporte y la política de privacidad oficial de Voyara.
-      </p>
+      <div class="wrap hero-card">
+        <div class="eyebrow"><span data-lang="es">Página oficial de soporte para App Store</span><span data-lang="en">Official App Store support page</span></div>
+        <h1><span data-lang="es">Voyara: Travel Map<br>Soporte y privacidad</span><span data-lang="en">Voyara: Travel Map<br>Support & Privacy</span></h1>
+        <p><span data-lang="es">Esta es la página oficial de soporte y política de privacidad de Voyara: Travel Map. Si necesitas ayuda con la app, tienes un problema técnico o quieres contactar con el desarrollador, puedes hacerlo aquí.</span><span data-lang="en">This is the official support and privacy page for Voyara: Travel Map. If you need help with the app, have a technical issue, or want to contact the developer, you can do it here.</span></p>
+        <div class="hero-links">
+          <a class="btn" href="#support"><span data-lang="es">Obtener soporte</span><span data-lang="en">Get support</span></a>
+          <a class="btn" href="#privacy"><span data-lang="es">Leer privacidad</span><span data-lang="en">Read privacy policy</span></a>
+        </div>
+      </div>
     </section>
 
-    <section class="grid">
-      <article class="card">
-        <h2>Soporte</h2>
-        <p>
-          Si necesitas ayuda con la app, puedes escribir a:
-          <a href="mailto:ikerirastorzadeveloper@gmail.com">ikerirastorzadeveloper@gmail.com</a>
-        </p>
-        <p>
-          Intentaremos responder lo antes posible.
-        </p>
-      </article>
-
-      <article class="card">
-        <h2>Política de Privacidad</h2>
-        <p>
-          Voyara respeta tu privacidad. Esta app está pensada para ayudarte a registrar países visitados,
-          verificar algunos mediante fotos con metadata GPS y generar tarjetas para compartir tu progreso.
-        </p>
-
-        <h2>Qué datos guarda la app</h2>
-        <ul>
-          <li>Los países que añades a tu mapa.</li>
-          <li>El estado de cada país, incluyendo si está verificado o no.</li>
-          <li>Tu nombre visible, foto de perfil y preferencias de la app, si decides configurarlos.</li>
-          <li>La configuración de tarjetas, ajustes visuales y otras preferencias locales.</li>
-        </ul>
-
-        <h2>Fotos de verificación</h2>
-        <p>
-          Si eliges una foto para verificar un país, Voyara analiza la metadata GPS de esa imagen para comprobar
-          si la ubicación coincide con el país seleccionado.
-        </p>
-        <ul>
-          <li>La foto se usa únicamente para leer su ubicación.</li>
-          <li>La imagen no se sube a servidores de Voyara.</li>
-          <li>El análisis se realiza en el dispositivo.</li>
-        </ul>
-
-        <h2>Notificaciones</h2>
-        <p>
-          Voyara puede enviar recordatorios locales para invitarte a volver a la app. Puedes activar o desactivar
-          estas notificaciones desde los ajustes del perfil.
-        </p>
-
-        <h2>Compartir contenido</h2>
-        <p>
-          La app puede generar tarjetas e imágenes para compartir en redes sociales o apps de mensajería.
-          Ese contenido solo se comparte si tú decides hacerlo.
-        </p>
-
-        <h2>Almacenamiento de datos</h2>
-        <p>
-          La información principal de Voyara se guarda localmente en tu dispositivo.
-        </p>
-
-        <h2>Terceros</h2>
-        <p>
-          Voyara no vende tus datos personales ni comparte tus fotos con terceros para fines publicitarios.
-        </p>
-
-        <h2>Tus opciones</h2>
-        <p>
-          Puedes dejar de usar la app en cualquier momento y borrar tus datos eliminando la app de tu dispositivo.
-        </p>
-
-        <h2>Contacto</h2>
-        <p>
-          Si tienes preguntas sobre esta política de privacidad, puedes escribir a
-          <a href="mailto:ikerirastorzadeveloper@gmail.com">ikerirastorzadeveloper@gmail.com</a>.
-        </p>
-
-        <h2>Cambios en esta política</h2>
-        <p>
-          Esta política puede actualizarse en el futuro para reflejar mejoras en la app o cambios legales.
-        </p>
-
-        <p><strong>Última actualización:</strong> septiembre de 2025</p>
-      </article>
+    <section class="section" id="support">
+      <div class="wrap">
+        <h2><span data-lang="es">Soporte</span><span data-lang="en">Support</span></h2>
+        <p class="section-intro"><span data-lang="es">Para los requisitos de Apple App Store, esta página ofrece un contacto público de soporte e información básica de ayuda para Voyara: Travel Map.</span><span data-lang="en">For Apple App Store requirements, this page provides a public support contact and basic help information for Voyara: Travel Map.</span></p>
+        <div class="grid-3">
+          <div class="card">
+            <h3><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></h3>
+            <p>Email: <a href="mailto:ikerirastorzadeveloper@gmail.com">ikerirastorzadeveloper@gmail.com</a></p>
+            <p><span data-lang="es">Intentaremos responder lo antes posible.</span><span data-lang="en">We aim to reply as soon as possible.</span></p>
+          </div>
+          <div class="card">
+            <h3><span data-lang="es">Qué cubre el soporte</span><span data-lang="en">What support covers</span></h3>
+            <p><span data-lang="es">Problemas técnicos, dudas sobre la app, sugerencias de funciones y asistencia general relacionada con Voyara: Travel Map.</span><span data-lang="en">Technical issues, app questions, feature feedback, and general assistance related to Voyara: Travel Map.</span></p>
+          </div>
+          <div class="card">
+            <h3><span data-lang="es">Compatibilidad</span><span data-lang="en">Compatibility</span></h3>
+            <p><span data-lang="es">Voyara: Travel Map está diseñada para iPhone. La disponibilidad y las funciones pueden variar según el dispositivo y la versión de iOS.</span><span data-lang="en">Voyara: Travel Map is designed for iPhone. Availability and features may vary depending on device and iOS version.</span></p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <p class="footer">© 2025 Iker Irastorza</p>
+    <section class="section">
+      <div class="wrap">
+        <h2><span data-lang="es">Preguntas frecuentes</span><span data-lang="en">Frequently asked questions</span></h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3><span data-lang="es">¿Cómo verifico un viaje?</span><span data-lang="en">How do I verify a trip?</span></h3>
+            <p><span data-lang="es">Puedes verificar un lugar usando una foto que contenga metadatos de ubicación, cuando la función esté disponible dentro del flujo de la app.</span><span data-lang="en">You can verify a place using a photo that contains location metadata, when supported by the app flow.</span></p>
+          </div>
+          <div class="card">
+            <h3><span data-lang="es">¿Cómo contacto con soporte?</span><span data-lang="en">How do I contact support?</span></h3>
+            <p><span data-lang="es">Puedes escribir directamente al desarrollador en </span><span data-lang="en">You can email the developer directly at </span><a href="mailto:ikerirastorzadeveloper@gmail.com">ikerirastorzadeveloper@gmail.com</a>.</p>
+          </div>
+          <div class="card">
+            <h3><span data-lang="es">¿Dónde se guardan mis datos?</span><span data-lang="en">Where is my data stored?</span></h3>
+            <p><span data-lang="es">Consulta la sección de política de privacidad de abajo para ver cómo se gestionan los datos.</span><span data-lang="en">Please see the privacy policy section below for information about how data is handled.</span></p>
+          </div>
+          <div class="card">
+            <h3><span data-lang="es">¿Puedo reportar un error o pedir ayuda?</span><span data-lang="en">Can I report a bug or request help?</span></h3>
+            <p><span data-lang="es">Sí. Envía un mensaje con una breve descripción del problema, tu dispositivo y tu versión de iOS si es posible.</span><span data-lang="en">Yes. Send a message with a short description of the issue, your device, and your iOS version if possible.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <div class="wrap">
+        <h2><span data-lang="es">Política de privacidad</span><span data-lang="en">Privacy Policy</span></h2>
+        <p class="section-intro"><span data-lang="es">Última actualización: abril de 2026</span><span data-lang="en">Last updated: April 2026</span></p>
+        <div class="policy">
+          <div class="policy-section">
+            <h3><span data-lang="es">1. Resumen</span><span data-lang="en">1. Overview</span></h3>
+            <p><span data-lang="es">Voyara: Travel Map respeta tu privacidad. Esta política explica qué información puede usar la app, cómo se gestiona y cómo puedes contactar con el desarrollador para preguntas relacionadas con la privacidad.</span><span data-lang="en">Voyara: Travel Map respects your privacy. This policy explains what information the app may use, how it is handled, and how you can contact the developer with privacy-related questions.</span></p>
+          </div>
+          <div class="policy-section">
+            <h3><span data-lang="es">2. Información que usa la app</span><span data-lang="en">2. Information used by the app</span></h3>
+            <ul class="block-es">
+              <li>Progreso del mapa de viajes y datos relacionados con países.</li>
+              <li>Preferencias y ajustes de la app.</li>
+              <li>Fotos seleccionadas por el usuario para funciones de la app, cuando corresponda.</li>
+            </ul>
+            <ul class="block-en">
+              <li>Travel map progress and country-related app data.</li>
+              <li>App preferences and settings.</li>
+              <li>Photos selected by the user for app features, where applicable.</li>
+            </ul>
+          </div>
+          <div class="policy-section">
+            <h3><span data-lang="es">3. Fotos y metadatos de ubicación</span><span data-lang="en">3. Photos and location metadata</span></h3>
+            <p><span data-lang="es">Si la app ofrece verificación de viajes usando fotos, puede leer metadatos relevantes, como la información de ubicación de imágenes seleccionadas por el usuario, para dar soporte a esa función.</span><span data-lang="en">If the app offers trip verification using photos, it may read relevant metadata such as location information from user-selected images in order to support that feature.</span></p>
+          </div>
+          <div class="policy-section">
+            <h3><span data-lang="es">4. Compartición de datos</span><span data-lang="en">4. Data sharing</span></h3>
+            <p><span data-lang="es">Voyara: Travel Map no vende datos personales. La información del usuario no se comparte con fines publicitarios a través de este sitio de soporte.</span><span data-lang="en">Voyara: Travel Map does not sell personal data. User information is not shared for advertising purposes through this support site.</span></p>
+          </div>
+          <div class="policy-section">
+            <h3><span data-lang="es">5. Almacenamiento de datos</span><span data-lang="en">5. Data storage</span></h3>
+            <p><span data-lang="es">La gestión de datos puede depender de la versión de la app y de las funciones que estén en uso. Si quieres aclaraciones sobre una función concreta, contacta con el desarrollador.</span><span data-lang="en">Data handling may depend on the version of the app and the features in use. If you want clarification about a specific feature, please contact the developer.</span></p>
+          </div>
+          <div class="policy-section">
+            <h3><span data-lang="es">6. Tus opciones</span><span data-lang="en">6. Your choices</span></h3>
+            <p><span data-lang="es">Puedes dejar de usar la app en cualquier momento. También puedes contactar con el desarrollador si tienes preguntas sobre los datos o la privacidad.</span><span data-lang="en">You may stop using the app at any time. You may also contact the developer if you have questions about app data or privacy.</span></p>
+          </div>
+          <div class="policy-section">
+            <h3><span data-lang="es">7. Contacto</span><span data-lang="en">7. Contact</span></h3>
+            <p><span data-lang="es">Para soporte o preguntas sobre privacidad, contacta en: </span><span data-lang="en">For support or privacy questions, contact: </span><a href="mailto:ikerirastorzadeveloper@gmail.com">ikerirastorzadeveloper@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <div class="footer-logo">
+        <img src="data:image/jpeg;base64,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" alt="Voyara logo" />
+        <div>Voyara<small>Travel Map</small></div>
+      </div>
+      <div>© 2026 Voyara: Travel Map</div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('data-current-lang', lang);
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+    setLang('es');
+  </script>
 </body>
 </html>
