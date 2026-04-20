@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Voyara · Privacidad y Soporte</title>
+  <title>Voyara · Privacidad, Soporte y Cuenta</title>
   <style>
     :root {
       --bg: #f6f3ee;
@@ -111,9 +111,9 @@
   <main class="wrap">
     <section class="hero">
       <div class="badge">Voyara</div>
-      <h1>Privacidad y Soporte</h1>
+      <h1>Privacidad, Soporte y Cuenta</h1>
       <p class="lead">
-        Esta página reúne la información de soporte y la política de privacidad oficial de Voyara.
+        Esta página reúne la información de soporte y la política de privacidad oficial de Voyara, incluyendo cuentas, sincronización en la nube y perfil social público opcional.
       </p>
     </section>
 
@@ -127,59 +127,72 @@
         <p>
           Intentaremos responder lo antes posible.
         </p>
+
+        <h2>Qué cubre el soporte</h2>
+        <p>
+          Problemas técnicos, acceso a la cuenta, sincronización en la nube, rankings, perfiles públicos, recuperación de contraseña, verificación con foto y asistencia general relacionada con Voyara.
+        </p>
       </article>
 
       <article class="card">
         <h2>Política de Privacidad</h2>
         <p>
-          Voyara respeta tu privacidad. Esta app está pensada para ayudarte a registrar países visitados,
-          verificar algunos mediante fotos con metadata GPS y generar tarjetas para compartir tu progreso.
+          Voyara respeta tu privacidad. Esta app está pensada para ayudarte a registrar países visitados, verificarlos con foto cuando corresponda, sincronizar tu cuenta en la nube y, si quieres, enseñar un perfil público y salir en rankings.
         </p>
 
         <h2>Qué datos guarda la app</h2>
         <ul>
           <li>Los países que añades a tu mapa.</li>
           <li>El estado de cada país, incluyendo si está verificado o no.</li>
-          <li>Tu nombre visible, foto de perfil y preferencias de la app, si decides configurarlos.</li>
-          <li>La configuración de tarjetas, ajustes visuales y otras preferencias locales.</li>
+          <li>Tu nombre visible, ciudad base opcional, tipo de viajero, foto de perfil y preferencias de la app, si decides configurarlos.</li>
+          <li>Tu email si usas acceso con email y contraseña, o los datos básicos de cuenta si usas Apple Sign In.</li>
+          <li>Tu configuración social opcional, como perfil público, aparición en rankings, bio pública y visibilidad de mapa o logros.</li>
+          <li>La configuración de tarjetas, ajustes visuales y otras preferencias.</li>
         </ul>
 
         <h2>Fotos de verificación</h2>
         <p>
-          Si eliges una foto para verificar un país, Voyara analiza la metadata GPS de esa imagen para comprobar
-          si la ubicación coincide con el país seleccionado.
+          Si eliges una foto para verificar un país, Voyara analiza la metadata GPS de esa imagen para comprobar si la ubicación coincide con el país seleccionado.
         </p>
         <ul>
           <li>La foto se usa únicamente para leer su ubicación.</li>
-          <li>La imagen no se sube a servidores de Voyara.</li>
-          <li>El análisis se realiza en el dispositivo.</li>
+          <li>La imagen no se publica automáticamente en tu perfil público.</li>
+          <li>Voyara no usa esa foto como publicación social por defecto.</li>
         </ul>
+
+        <h2>Cuentas y nube</h2>
+        <p>
+          Las versiones actuales de Voyara usan cuenta para sincronizar tu mapa, tu perfil, tus visitas y tus ajustes entre dispositivos.
+        </p>
 
         <h2>Notificaciones</h2>
         <p>
-          Voyara puede enviar recordatorios locales para invitarte a volver a la app. Puedes activar o desactivar
-          estas notificaciones desde los ajustes del perfil.
+          Voyara puede enviar recordatorios locales para invitarte a volver a la app. Puedes activar o desactivar estas notificaciones desde los ajustes del perfil.
         </p>
 
         <h2>Compartir contenido</h2>
         <p>
-          La app puede generar tarjetas e imágenes para compartir en redes sociales o apps de mensajería.
-          Ese contenido solo se comparte si tú decides hacerlo.
+          La app puede generar tarjetas e imágenes para compartir en redes sociales o apps de mensajería. Ese contenido solo se comparte si tú decides hacerlo.
+        </p>
+
+        <h2>Perfil público y rankings</h2>
+        <p>
+          Voyara puede ofrecer perfil público y rankings globales. Estas funciones son opcionales. Solo se enseñan si tú activas esa visibilidad desde la app.
         </p>
 
         <h2>Almacenamiento de datos</h2>
         <p>
-          La información principal de Voyara se guarda localmente en tu dispositivo.
+          La información principal de Voyara puede guardarse en la nube para sincronizar tu cuenta entre dispositivos.
         </p>
 
         <h2>Terceros</h2>
         <p>
-          Voyara no vende tus datos personales ni comparte tus fotos con terceros para fines publicitarios.
+          Voyara no vende tus datos personales ni comparte tus datos con terceros para fines publicitarios.
         </p>
 
         <h2>Tus opciones</h2>
         <p>
-          Puedes dejar de usar la app en cualquier momento y borrar tus datos eliminando la app de tu dispositivo.
+          Puedes dejar de usar la app en cualquier momento. También puedes borrar tu cuenta directamente desde la app, en Perfil &gt; Cuenta &gt; Borrar cuenta.
         </p>
 
         <h2>Contacto</h2>
@@ -193,11 +206,11 @@
           Esta política puede actualizarse en el futuro para reflejar mejoras en la app o cambios legales.
         </p>
 
-        <p><strong>Última actualización:</strong> septiembre de 2025</p>
+        <p><strong>Última actualización:</strong> abril de 2026</p>
       </article>
     </section>
 
-    <p class="footer">© 2025 Iker Irastorza</p>
+    <p class="footer">© 2026 Iker Irastorza</p>
   </main>
 </body>
 </html>
